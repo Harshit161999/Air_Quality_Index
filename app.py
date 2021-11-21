@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request
-import joblib #from sklearn.externals 
+import pickle
+#import joblib from sklearn.externals 
 import numpy as np
 
 app = Flask(__name__)
 
-lr = joblib.load("Models/linear_regression_model.pkl")
+lr = pickle.load("linear_regression_model.pkl")
 
 @app.route("/")
 def home():
